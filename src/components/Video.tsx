@@ -47,12 +47,13 @@ export function Video(props: VideoProps) {
     variables: {
       slug: props.lessonSlug,
     },
+    fetchPolicy: `no-cache`,
   });
 
   if (!data) {
     return (
-      <div className='flex-1'>
-        <p>Carregando...</p>
+      <div className='flex-1 h-full w-full'>
+        <div className='bg-black h-[60vh] aspect-video'></div>
       </div>
     );
   }
